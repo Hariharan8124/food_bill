@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Billing System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="billing-section">
+            <h2>Table Name: AC</h2>
+            <div class="billing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Dish Name</th>
+                            <th>Single Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billing-items">
+                        <!-- Billing items will be added here dynamically -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Total Amount</td>
+                            <td id="total-amount">0.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Given Amount</td>
+                            <td><input type="number" id="given-amount" oninput="calculateBalance()" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Balance Amount</td>
+                            <td id="balance-amount">0.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="buttons">
+                <button class="pay-btn" onclick="processPayment()">Pay</button>
+                <button class="cancel-btn" onclick="clearCart()">Cancel</button>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <input type="text" id="search" placeholder="Enter item name or code..." onkeyup="searchItems()">
+            <div class="menu-items" id="menu-items">
+                <!-- Default items will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
